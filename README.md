@@ -4,7 +4,7 @@ A fast, accessible, and user-friendly todo list web application built with React
 
 Live demo
 
-- Try the app in action: '[http.....](https://todo-app-production-7f13.up.railway.app/)'
+- Try the app in action: '[To do App](https://todo-app-production-7f13.up.railway.app/)'
 
 Key features
 
