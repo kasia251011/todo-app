@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import type { TaskList } from "./types";
+import type { TaskList, TaskListBase } from "./types";
 import { v4 as uuid } from "uuid";
 import { DEFAULT_TASK_LISTS } from "@/data/defaultTaskLists";
 
@@ -11,10 +11,7 @@ export const taskListsSlice = createSlice({
   name: "taskLists",
   initialState: initialState,
   reducers: {
-    addTaskList: (
-      state,
-      action: PayloadAction<Omit<TaskList, "id" | "tasks">>,
-    ) => {
+    addTaskList: (state, action: PayloadAction<TaskListBase>) => {
       state.taskLists.push({ ...action.payload, id: uuid() });
     },
     removeTaskList: (state, action: PayloadAction<string>) => {

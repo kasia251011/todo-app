@@ -4,6 +4,7 @@ import type { Task } from "@/redux/slices/types";
 import { DeleteOutlined } from "@ant-design/icons";
 import { Button } from "antd";
 import Checkbox from "antd/es/checkbox/Checkbox";
+import clsx from "clsx";
 import dayjs from "dayjs";
 import { useMemo } from "react";
 
@@ -24,13 +25,19 @@ export const TaskItem = ({ task }: { task: Task }) => {
         <Checkbox checked={task.completed} />
         <div className="font-medium ">
           <p
-            className={`${task.completed ? "line-through text-gray-400" : "text-gray-800"}`}
+            className={clsx(
+              "text-gray-800",
+              task.completed && "line-through text-gray-400",
+            )}
           >
             {task.title}
           </p>
           {task.deadline && (
             <p
-              className={`text-sm ${isOverdue ? "text-red-500" : "text-gray-500"}`}
+              className={clsx(
+                "text-sm",
+                isOverdue ? "text-red-500" : "text-gray-500",
+              )}
             >
               {dayjs(task.deadline).format("MM:HH MMM D")}
             </p>

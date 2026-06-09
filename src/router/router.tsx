@@ -8,7 +8,7 @@ export function AppRouter() {
     <BrowserRouter>
       <Routes>
         <Route index path={PATHS.HOME} element={<DashboardPage />} />
-        <Route index path={PATHS.HOME + "/:id"} element={<TasksPage />} />
+        <Route index path={PATHS.TASK_LIST} element={<TasksPage />} />
       </Routes>
     </BrowserRouter>
   );

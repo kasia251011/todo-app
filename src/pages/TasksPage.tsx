@@ -9,6 +9,7 @@ import { useMemo } from "react";
 import { useNavigate, useParams } from "react-router";
 
 // TODO: Handle task importance
+// TODO: Handle change task list name and icon
 
 export const TasksPage = () => {
   const navigate = useNavigate();
@@ -19,7 +20,9 @@ export const TasksPage = () => {
   const done = useMemo(() => tasks.filter((task) => task.completed), [tasks]);
   const toDo = useMemo(() => tasks.filter((task) => !task.completed), [tasks]);
 
-  if (!id || !tasksList || !tasks) {
+  const notFound = !id || !tasksList || !tasks;
+
+  if (notFound) {
     return (
       <div className="bg-blue-600 h-dvh flex items-center justify-center w-screen flex-col gap-4">
         <p className="text-white text-2xl">Task List not found</p>

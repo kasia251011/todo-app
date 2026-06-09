@@ -15,8 +15,8 @@ export const RemoveTaskListButton = ({
   id,
   name,
 }: RemoveTaskListButtonProps) => {
-  const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
   return (
@@ -50,8 +50,7 @@ export const RemoveTaskListButton = ({
         onCancel={() => setIsModalOpen(false)}
       >
         <p>
-          Are you sure you want to delete the task list "<strong>{name}</strong>
-          "?
+          Are you sure you want to delete the task list <strong>{name}</strong>?
         </p>
       </Modal>
     </>
