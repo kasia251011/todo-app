@@ -13,6 +13,7 @@ export const AddTaskButton = ({ taskListId }: { taskListId: string }) => {
         icon={<PlusOutlined />}
         type="primary"
         onClick={() => setIsModalOpen(true)}
+        className="w-full sm:w-fit"
       >
         Add Task
       </Button>
