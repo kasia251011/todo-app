@@ -2,6 +2,7 @@ import { TaskItem } from "@/components/task/TaskItem";
 import { useGetTaskListById, useGetTasksByListId } from "@/redux/slices/hooks";
 import { ArrowLeftOutlined } from "@ant-design/icons/es/icons/index";
 import { Button } from "antd";
+import { useMemo } from "react";
 import { useNavigate, useParams } from "react-router";
 
 export const TasksPage = () => {
@@ -9,6 +10,9 @@ export const TasksPage = () => {
   const { id } = useParams();
   const tasksList = useGetTaskListById(id!);
   const tasks = useGetTasksByListId(id!);
+
+  const done = useMemo(() => tasks.filter((task) => task.completed), [tasks]);
+  const toDo = useMemo(() => tasks.filter((task) => !task.completed), [tasks]);
 
   return (
     <div className="bg-blue-600 h-screen flex flex-col w-screen px-70">
@@ -27,10 +31,19 @@ export const TasksPage = () => {
         </div>
       </div>
 
-      <div className="flex px-4 pt-8 flex-col gap-1 bg-white h-full rounded-t-2xl mt-3 ">
-        {tasks.map((task) => (
-          <TaskItem key={task.id} task={task} />
-        ))}
+      <div className="px-4 pt-8 bg-white h-full rounded-t-2xl mt-3 ">
+        <p className="px-4 py-2 text-slate-400">To Do</p>
+        <div className="flex flex-col gap-1">
+          {toDo.map((task) => (
+            <TaskItem key={task.id} task={task} />
+          ))}
+        </div>
+        <p className="px-4 py-2 text-slate-400">Done</p>
+        <div className="flex flex-col gap-1">
+          {done.map((task) => (
+            <TaskItem key={task.id} task={task} />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -22,6 +22,15 @@ const initialState: { tasks: Task[] } = {
       deadline: dayjs().add(2, "day"),
       listId: "0",
     },
+    {
+      id: "2",
+      title: "Another Task",
+      description: "This is another task in the default task list.",
+      completed: true,
+      importance: "high",
+      deadline: dayjs().subtract(2, "day"),
+      listId: "0",
+    },
   ],
 };
 
