@@ -1,9 +1,11 @@
+import type dayjs from "dayjs";
+
 interface Task {
   id: string;
   title: string;
   description?: string;
   completed: boolean;
-  deadline?: string;
+  deadline?: dayjs.Dayjs;
   importance: "low" | "medium" | "high";
 }
 
