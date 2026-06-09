@@ -16,7 +16,7 @@ export const AddTaskListButton = () => {
       />
       {isModalOpen && (
         <Modal
-          title="Add TaskList"
+          title="Add Task List"
           open
           onCancel={() => setIsModalOpen(false)}
           okButtonProps={{ form: ADD_LIST_FORM_ID, htmlType: "submit" }}
