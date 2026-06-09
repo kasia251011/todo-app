@@ -2,6 +2,10 @@
 
 A fast, accessible, and user-friendly todo list web application built with React, TypeScript, Vite, and Redux Toolkit. The app supports multiple task lists, quick task creation, emoji/icon selection for lists, scheduled tasks via a time picker, and a clean responsive UI.
 
+Live demo
+
+- Try the app in action: '[http.....](https://todo-app-production-7f13.up.railway.app/)'
+
 Key features
 
 - **Multi-list support:** Create and manage multiple task lists (projects/categories).
@@ -30,7 +34,3 @@ npm install
 ```
 npm run dev
 ```
-
-Live demo
-
-- Try the app in action: 'http.....'
