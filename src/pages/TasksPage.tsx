@@ -19,8 +19,15 @@ export const TasksPage = () => {
 
   if (!id || !tasksList || !tasks) {
     return (
-      <div className="bg-blue-600 h-screen flex items-center justify-center w-screen px-70">
+      <div className="bg-blue-600 h-screen flex items-center justify-center w-screen flex-col gap-4">
         <p className="text-white text-2xl">Task List not found</p>
+        <Button
+          icon={<ArrowLeftOutlined />}
+          onClick={() => navigate(PATHS.HOME)}
+          variant="solid"
+        >
+          Go Back
+        </Button>
       </div>
     );
   }

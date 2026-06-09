@@ -18,7 +18,11 @@ export const TaskItem = ({ task }: { task: Task }) => {
       <div className="flex gap-6">
         <Checkbox checked={task.completed} />
         <div className="">
-          <p className="font-medium">{task.title}</p>
+          <p
+            className={`font-medium ${task.completed ? "line-through text-gray-400" : "text-gray-800"}`}
+          >
+            {task.title}
+          </p>
           {task.deadline && (
             <p
               className={`text-sm font-medium ${task.deadline < today && !task.completed ? "text-red-500" : "text-gray-500"}`}
