@@ -18,8 +18,6 @@ export const AddTaskForm = ({ onFinish, taskListId }: AddTaskFormProps) => {
 
   const saveTask = useCallback(
     (task: TaskBase) => {
-      console.log({ ...task, listId: taskListId });
-
       dispatch(addTask({ ...task, listId: taskListId }));
       onFinish();
     },
