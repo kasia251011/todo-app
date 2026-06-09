@@ -6,7 +6,6 @@ import { useNavigate, useParams } from "react-router";
 export const TasksPage = () => {
   const navigate = useNavigate();
   const { id } = useParams();
-
   const { taskLists } = useAppSelector((state) => state.taskLists);
   const filteredTaskList = taskLists.find((list) => list.id === id);
 

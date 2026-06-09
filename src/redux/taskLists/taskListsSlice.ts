@@ -4,22 +4,22 @@ import { v4 as uuid } from "uuid";
 
 const initialState: { taskLists: TaskList[] } = {
   taskLists: [
-    { name: "Default TaskList", id: uuid(), tasks: [], icon: "📁" },
+    { name: "Default TaskList", id: "0", tasks: [], icon: "📁" },
     {
-      name: "Another TaskList mkmlmlkmklmklklmk lkmklmklmkmklmkl",
-      id: uuid(),
+      name: "Another TaskList",
+      id: "1",
       tasks: [],
       icon: "📂",
     },
     {
       name: "Another TaskList mkmlmlkmklmklklmk lkmklmklmkmklmkl",
-      id: uuid(),
+      id: "2",
       tasks: [],
       icon: "📂",
     },
     {
       name: "Another TaskList mkmlmlkmklmklklmk lkmklmklmkmklmkl",
-      id: uuid(),
+      id: "3",
       tasks: [],
       icon: "📂",
     },
