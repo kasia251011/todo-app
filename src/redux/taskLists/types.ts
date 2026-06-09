@@ -9,9 +9,12 @@ interface Task {
   importance: "low" | "medium" | "high";
 }
 
-export interface TaskList {
+export interface TaskList extends TaskListBase {
   id: string;
+  tasks: Task[];
+}
+
+export interface TaskListBase {
   name: string;
   icon: string;
-  tasks: Task[];
 }

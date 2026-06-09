@@ -1,7 +1,6 @@
+import { AddTaskListButton } from "@/components/taskList/AddTaskListButton";
 import { TaskListCard } from "@/components/TaskListCard";
 import { useAppSelector } from "@/redux/hooks";
-import { PlusOutlined } from "@ant-design/icons";
-import { FloatButton } from "antd";
 
 export const DashboardPage = () => {
   const { taskLists } = useAppSelector((state) => state.taskLists);
@@ -14,7 +13,7 @@ export const DashboardPage = () => {
           <TaskListCard key={taskList.id} taskList={taskList} />
         ))}
       </div>
-      <FloatButton type="primary" icon={<PlusOutlined />} />
+      <AddTaskListButton />
     </div>
   );
 };
