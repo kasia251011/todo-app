@@ -9,7 +9,7 @@ interface Task {
   importance: "low" | "medium" | "high";
 }
 
-export interface Project {
+export interface TaskList {
   id: string;
   name: string;
   icon: string;
