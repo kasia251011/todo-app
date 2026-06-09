@@ -1,9 +1,16 @@
+import { useAppDispatch } from "@/redux/hooks";
+import { checkTask } from "@/redux/slices/taskSlice";
 import type { Task } from "@/redux/slices/types";
 import Checkbox from "antd/es/checkbox/Checkbox";
 
 export const TaskItem = ({ task }: { task: Task }) => {
+  const dispatch = useAppDispatch();
+
   return (
-    <div className="flex items-center justify-between px-8 ">
+    <div
+      className="flex items-center justify-between px-4 hover:bg-gray-100 cursor-pointer rounded-lg py-4"
+      onClick={() => dispatch(checkTask(task.id))}
+    >
       <div className="">
         <p className="font-medium">{task.title}</p>
         {task.deadline && (

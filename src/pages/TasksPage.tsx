@@ -27,7 +27,7 @@ export const TasksPage = () => {
         </div>
       </div>
 
-      <div className="flex pt-8 flex-col gap-6 bg-white h-full rounded-t-2xl mt-3 ">
+      <div className="flex px-4 pt-8 flex-col gap-1 bg-white h-full rounded-t-2xl mt-3 ">
         {tasks.map((task) => (
           <TaskItem key={task.id} task={task} />
         ))}
