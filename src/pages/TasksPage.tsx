@@ -1,13 +1,9 @@
+import { AddTaskButton } from "@/components/task/AddTaskButton";
 import { TaskItem } from "@/components/task/TaskItem";
 import { RemoveTaskListButton } from "@/components/taskList/RemoveTaskListButton";
-import { useAppDispatch } from "@/redux/hooks";
 import { useGetTaskListById, useGetTasksByListId } from "@/redux/slices/hooks";
-import { addTask } from "@/redux/slices/taskSlice";
 import { PATHS } from "@/router/paths";
-import {
-  ArrowLeftOutlined,
-  PlusOutlined,
-} from "@ant-design/icons/es/icons/index";
+import { ArrowLeftOutlined } from "@ant-design/icons/es/icons/index";
 import { Button } from "antd";
 import { useMemo } from "react";
 import { useNavigate, useParams } from "react-router";
@@ -17,7 +13,6 @@ export const TasksPage = () => {
   const { id } = useParams();
   const tasksList = useGetTaskListById(id!);
   const tasks = useGetTasksByListId(id!);
-  const dispatch = useAppDispatch();
 
   const done = useMemo(() => tasks.filter((task) => task.completed), [tasks]);
   const toDo = useMemo(() => tasks.filter((task) => !task.completed), [tasks]);
@@ -48,21 +43,7 @@ export const TasksPage = () => {
           </div>
         </div>
         <div className="flex gap-2">
-          <Button
-            icon={<PlusOutlined />}
-            onClick={() =>
-              dispatch(
-                addTask({
-                  title: "New Task",
-                  completed: false,
-                  importance: "low",
-                  listId: id,
-                }),
-              )
-            }
-          >
-            Add Task
-          </Button>
+          <AddTaskButton taskListId={id} />
           <RemoveTaskListButton id={id} name={tasksList.name} />
         </div>
       </div>

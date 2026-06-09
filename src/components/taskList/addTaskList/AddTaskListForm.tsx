@@ -5,7 +5,7 @@ import { useAppDispatch } from "@/redux/hooks";
 import { IconPicker } from "../IconPicker";
 import { EMOJIS } from "../TaskListEmojis";
 
-export const ADD_GAME_FORM_ID = "add-task-list-form";
+export const ADD_LIST_FORM_ID = "add-task-list-form";
 
 export const AddTaskListForm = ({ onFinish }: { onFinish: () => void }) => {
   const dispatch = useAppDispatch();
@@ -24,7 +24,7 @@ export const AddTaskListForm = ({ onFinish }: { onFinish: () => void }) => {
     <Form<TaskListBase>
       form={form}
       onFinish={saveTaskList}
-      id={ADD_GAME_FORM_ID}
+      id={ADD_LIST_FORM_ID}
       initialValues={{ icon: EMOJIS[0] }}
     >
       <div className="flex">
