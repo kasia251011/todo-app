@@ -1,14 +1,15 @@
 import type { TaskBase } from "@/redux/slices/types";
-import { Form, TimePicker } from "antd";
+import { Form, DatePicker } from "antd";
 
 export const TimePickerInput = () => {
   return (
     <Form.Item<TaskBase> name="deadline">
-      <TimePicker
-        format="h:mm"
-        showNow={false}
+      <DatePicker
+        format="DD MMM h:mm "
+        showNow={true}
         needConfirm={false}
         minuteStep={5}
+        showTime={true}
       />
     </Form.Item>
   );

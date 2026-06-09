@@ -27,7 +27,7 @@ export const TaskItem = ({ task }: { task: Task }) => {
             <p
               className={`text-sm font-medium ${task.deadline < today && !task.completed ? "text-red-500" : "text-gray-500"}`}
             >
-              {task.deadline.format("MM:HH MMMM D")}
+              {task.deadline.format("MM:HH MMM D")}
             </p>
           )}
         </div>

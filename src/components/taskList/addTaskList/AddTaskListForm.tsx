@@ -29,7 +29,17 @@ export const AddTaskListForm = ({ onFinish }: { onFinish: () => void }) => {
     >
       <div className="flex">
         <IconPicker />
-        <Form.Item name="name" required className="w-full">
+        <Form.Item
+          name="name"
+          required
+          className="w-full"
+          rules={[
+            {
+              required: true,
+              message: "Enter a name for the task list",
+            },
+          ]}
+        >
           <Input
             size="large"
             variant="borderless"
