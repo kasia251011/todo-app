@@ -1,37 +1,10 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import type { Task } from "./types";
 import { v4 as uuid } from "uuid";
-import dayjs from "dayjs";
+import { DEFAULT_TASKS } from "@/data/defaultTasks";
 
 const initialState: { tasks: Task[] } = {
-  tasks: [
-    {
-      id: "0",
-      title: "Default Task",
-      description: "This is a default task in the default task list.",
-      completed: false,
-      importance: "medium",
-      listId: "0",
-    },
-    {
-      id: "1",
-      title: "Another Task",
-      description: "This is another task in the default task list.",
-      completed: true,
-      importance: "high",
-      deadline: dayjs().add(2, "day").toISOString(),
-      listId: "0",
-    },
-    {
-      id: "2",
-      title: "Another Task",
-      description: "This is another task in the default task list.",
-      completed: true,
-      importance: "high",
-      deadline: dayjs().subtract(2, "day").toISOString(),
-      listId: "0",
-    },
-  ],
+  tasks: DEFAULT_TASKS,
 };
 
 export const taskSlice = createSlice({

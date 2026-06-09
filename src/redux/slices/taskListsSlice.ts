@@ -1,30 +1,10 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import type { TaskList } from "./types";
 import { v4 as uuid } from "uuid";
+import { DEFAULT_TASK_LISTS } from "@/data/defaultTaskLists";
 
 const initialState: { taskLists: TaskList[] } = {
-  taskLists: [
-    {
-      name: "Default TaskList",
-      id: "0",
-      icon: "📁",
-    },
-    {
-      name: "Another TaskList",
-      id: "1",
-      icon: "📂",
-    },
-    {
-      name: "Another TaskList mkmlmlkmklmklklmk lkmklmklmkmklmkl",
-      id: "2",
-      icon: "📂",
-    },
-    {
-      name: "Another TaskList mkmlmlkmklmklklmk lkmklmklmkmklmkl",
-      id: "3",
-      icon: "📂",
-    },
-  ],
+  taskLists: DEFAULT_TASK_LISTS,
 };
 
 export const taskListsSlice = createSlice({

@@ -8,6 +8,8 @@ import { Button } from "antd";
 import { useMemo } from "react";
 import { useNavigate, useParams } from "react-router";
 
+// TODO: Handle task importance
+
 export const TasksPage = () => {
   const navigate = useNavigate();
   const { id } = useParams();
