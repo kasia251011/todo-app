@@ -3,7 +3,7 @@ import { useCallback } from "react";
 import type { TaskListBase } from "@/redux/slices/types";
 import { useAppDispatch } from "@/redux/hooks";
 import { IconPicker } from "../IconPicker";
-import { EMOJIS } from "@/data/taskListEmojis";
+import { EMOJIS } from "../../../data/taskListEmojis";
 import { addTaskList } from "@/redux/slices/taskListsSlice";
 
 export const ADD_LIST_FORM_ID = "add-task-list-form";

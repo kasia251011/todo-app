@@ -1,5 +1,5 @@
 import { Dropdown, Form } from "antd";
-import { EMOJIS } from "@/data/taskListEmojis";
+import { EMOJIS } from "../../data/taskListEmojis";
 
 export const IconPicker = () => {
   const form = Form.useFormInstance();

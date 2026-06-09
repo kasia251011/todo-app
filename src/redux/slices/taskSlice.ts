@@ -1,7 +1,7 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import type { Task, TaskBase } from "./types";
 import { v4 as uuid } from "uuid";
-import { DEFAULT_TASKS } from "@/data/defaultTasks";
+import { DEFAULT_TASKS } from "../../data/defaultTasks";
 
 const initialState: { tasks: Task[] } = {
   tasks: DEFAULT_TASKS,
