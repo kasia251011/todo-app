@@ -2,8 +2,8 @@ import { Form, Input } from "antd";
 import { useCallback } from "react";
 import type { TaskListBase } from "@/redux/slices/types";
 import { useAppDispatch } from "@/redux/hooks";
-import { IconPicker } from "./IconPicker";
-import { EMOJIS } from "./TaskListEmojis";
+import { IconPicker } from "../IconPicker";
+import { EMOJIS } from "../TaskListEmojis";
 
 export const ADD_GAME_FORM_ID = "add-task-list-form";
 
