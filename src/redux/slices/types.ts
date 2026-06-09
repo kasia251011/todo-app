@@ -1,5 +1,3 @@
-import type dayjs from "dayjs";
-
 export interface Task extends TaskBase {
   id: string;
 }
@@ -8,7 +6,7 @@ export interface TaskBase {
   title: string;
   description?: string;
   completed: boolean;
-  deadline?: dayjs.Dayjs;
+  deadline?: string;
   importance: "low" | "medium" | "high";
   listId: string;
 }

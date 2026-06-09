@@ -19,7 +19,7 @@ const initialState: { tasks: Task[] } = {
       description: "This is another task in the default task list.",
       completed: true,
       importance: "high",
-      deadline: dayjs().add(2, "day"),
+      deadline: dayjs().add(2, "day").toISOString(),
       listId: "0",
     },
     {
@@ -28,7 +28,7 @@ const initialState: { tasks: Task[] } = {
       description: "This is another task in the default task list.",
       completed: true,
       importance: "high",
-      deadline: dayjs().subtract(2, "day"),
+      deadline: dayjs().subtract(2, "day").toISOString(),
       listId: "0",
     },
   ],

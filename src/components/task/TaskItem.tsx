@@ -25,9 +25,9 @@ export const TaskItem = ({ task }: { task: Task }) => {
           </p>
           {task.deadline && (
             <p
-              className={`text-sm font-medium ${task.deadline < today && !task.completed ? "text-red-500" : "text-gray-500"}`}
+              className={`text-sm font-medium ${dayjs(task.deadline) < today && !task.completed ? "text-red-500" : "text-gray-500"}`}
             >
-              {task.deadline.format("MM:HH MMM D")}
+              {dayjs(task.deadline).format("MM:HH MMM D")}
             </p>
           )}
         </div>
