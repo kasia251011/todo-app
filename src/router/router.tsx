@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router";
-import { DashboardPage } from "../pages/Dashboard";
+import { DashboardPage } from "@/pages/Dashboard";
 import { PATHS } from "./paths";
-import { TasksPage } from "../pages/TasksPage";
+import { TasksPage } from "@/pages/TasksPage";
 
 export function AppRouter() {
   return (
