@@ -1,6 +1,6 @@
 import { Form, Input } from "antd";
 import { useCallback } from "react";
-import type { TaskListBase } from "@/redux/taskLists/types";
+import type { TaskListBase } from "@/redux/slices/types";
 import { useAppDispatch } from "@/redux/hooks";
 import { IconPicker } from "./IconPicker";
 import { EMOJIS } from "./TaskListEmojis";

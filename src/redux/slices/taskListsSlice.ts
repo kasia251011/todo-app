@@ -4,23 +4,24 @@ import { v4 as uuid } from "uuid";
 
 const initialState: { taskLists: TaskList[] } = {
   taskLists: [
-    { name: "Default TaskList", id: "0", tasks: [], icon: "📁" },
+    {
+      name: "Default TaskList",
+      id: "0",
+      icon: "📁",
+    },
     {
       name: "Another TaskList",
       id: "1",
-      tasks: [],
       icon: "📂",
     },
     {
       name: "Another TaskList mkmlmlkmklmklklmk lkmklmklmkmklmkl",
       id: "2",
-      tasks: [],
       icon: "📂",
     },
     {
       name: "Another TaskList mkmlmlkmklmklklmk lkmklmklmkmklmkl",
       id: "3",
-      tasks: [],
       icon: "📂",
     },
   ],
@@ -34,7 +35,7 @@ export const taskListsSlice = createSlice({
       state,
       action: PayloadAction<Omit<TaskList, "id" | "tasks">>,
     ) => {
-      state.taskLists.push({ ...action.payload, id: uuid(), tasks: [] });
+      state.taskLists.push({ ...action.payload, id: uuid() });
     },
     removeTaskList: (state, action: PayloadAction<string>) => {
       state.taskLists = state.taskLists.filter(

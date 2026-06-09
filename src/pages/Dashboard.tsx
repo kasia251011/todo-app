@@ -1,5 +1,5 @@
 import { AddTaskListButton } from "@/components/taskList/AddTaskListButton";
-import { TaskListCard } from "@/components/TaskListCard";
+import { TaskListCard } from "@/components/taskList/TaskListCard";
 import { useAppSelector } from "@/redux/hooks";
 
 export const DashboardPage = () => {
