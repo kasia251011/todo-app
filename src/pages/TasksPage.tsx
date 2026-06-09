@@ -16,14 +16,14 @@ export const TasksPage = () => {
 
   return (
     <div className="bg-blue-600 h-screen flex flex-col w-screen px-70">
-      <div className="p-10 flex flex-col gap-4 ">
+      <div className="p-10 pb-5 flex flex-col gap-4 ">
         <Button
           icon={<ArrowLeftOutlined />}
           onClick={() => navigate(-1)}
           variant="solid"
         />
         <div className="flex flex-col gap-2 text-white">
-          <p className="text-lg bg-white rounded-full p-3 w-fit mb-2">
+          <p className="text-lg bg-white rounded-full p-3 w-fit my-2">
             {tasksList?.icon}
           </p>
           <h2 className="text-xl font-semibold">{tasksList?.name}</h2>
@@ -32,13 +32,13 @@ export const TasksPage = () => {
       </div>
 
       <div className="px-4 pt-8 bg-white h-full rounded-t-2xl mt-3 ">
-        <p className="px-4 py-2 text-slate-400">To Do</p>
+        <p className="px-4 py-2 text-slate-400"> {toDo.length} To Do </p>
         <div className="flex flex-col gap-1">
           {toDo.map((task) => (
             <TaskItem key={task.id} task={task} />
           ))}
         </div>
-        <p className="px-4 py-2 text-slate-400">Done</p>
+        <p className="px-4 py-2 text-slate-400">{done.length} Done </p>
         <div className="flex flex-col gap-1">
           {done.map((task) => (
             <TaskItem key={task.id} task={task} />
